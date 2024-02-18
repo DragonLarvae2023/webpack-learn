@@ -4,16 +4,28 @@ module.exports = {
   output: {
     filename: "output2.js",
     path: path.resolve(__dirname, "public"),
-    publicPath: "dist/"+path.resolve(__dirname, "img"),
+    publicPath: "auto",
   },
   mode: "none",
   module: {
     rules: [
       {
-        type: "asset/resource",
+        type: "asset",
         test: /\.(png|jpg)$/,
+        parser: {
+          dataUrlCondition: {
+            maxSize: 12 * 1024,
+          },
+        },
       },
-      {},
+      {
+        type: "asset/source",
+        test: /\.(txt)$/,
+      },
+      {
+        test: /\.(css)$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
 };
