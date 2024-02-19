@@ -1,8 +1,8 @@
 const path = require("path");
 module.exports = {
-  entry: "./src/add-image.js",
+  entry: "./src/resizingwindow.js",
   output: {
-    filename: "output2.js",
+    filename: "resize.js",
     path: path.resolve(__dirname, "public"),
     publicPath: "auto",
   },
@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader" ,"sass-loader"],
       },
     ],
   },
