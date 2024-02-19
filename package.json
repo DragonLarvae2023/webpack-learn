@@ -10,6 +10,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "node-sass": "^9.0.0",
     "sass-loader": "^14.1.0",
     "weback": "^0.0.1-security"
   }
